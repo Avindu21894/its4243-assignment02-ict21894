@@ -1,0 +1,41 @@
+server:
+  port: 8083
+
+spring:
+  application:
+    name: booking-service
+
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/booking_db?createDatabaseIfNotExist=true&allowPublicKeyRetrieval=true&useSSL=false
+    username: root
+    password: 0767092851
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+springdoc:
+  pathsToMatch: /**
+  swagger-ui:
+    path: /swagger-ui.html
+  api-docs:
+    path: /v3/api-docs
+
+app:
+  host: http://localhost:8083
+
+
+user-service:
+  base-url: http://localhost:8080
+
+flight-service:
+  base-url: http://localhost:8081
+
+hotel-service:
+  base-url: http://localhost:8082
+
+notification-service:
+  base-url: http://localhost:8085
